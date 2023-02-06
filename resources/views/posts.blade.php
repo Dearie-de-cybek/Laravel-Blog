@@ -7,7 +7,7 @@
     @if ($posts->count())    
       
     <x-posts-grid :posts="$posts" />
-
+ 
     
     @else
     <p>No posts yet. Please check back later</p>
