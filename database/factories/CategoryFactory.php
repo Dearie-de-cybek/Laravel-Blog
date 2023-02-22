@@ -20,6 +20,6 @@ class CategoryFactory extends Factory
             //
             'name' => fake()->name(),
             'slug' => fake()->slug() 
-        ];
+        ]; 
     }
 }
