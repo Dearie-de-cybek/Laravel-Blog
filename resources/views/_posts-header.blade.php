@@ -28,12 +28,12 @@
 
             <x-dropdown-item href="/" :active="request()->routeIs('home')">All</x-dropdown-item>
             @foreach ($categories as $category)
-            <x-dropdown-item href="/categories/{{ $category->slug }}" :active="request()->is('$category->slug')" >{{ ucwords($category->name) }}</x-dropdown-item>
+            <x-dropdown-item href="/?category={{ $category->slug }}" :active="request()->is('$category->slug')" >{{ ucwords($category->name) }}</x-dropdown-item>
             {{-- <a {{  ? 'bg-blue-500 text-white' : ''}}>{{ ucwords($category->name) }}</a> --}}
            
             @endforeach
           </x-dropdown>
-        </div>
+        </div> 
 
         <!-- Other Filters -->
         {{-- <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
