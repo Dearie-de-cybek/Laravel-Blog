@@ -1,4 +1,4 @@
-@extends('components.layout')
+@extends('components.posts')
 @section('content')
 
 @include('_posts-header')
