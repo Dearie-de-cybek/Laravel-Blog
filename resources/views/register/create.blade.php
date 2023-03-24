@@ -1,6 +1,6 @@
 <x-layout>
    
-
+@section('content')
             <h1 class="text-center font-bold text-xl">Register!</h1>
             <form method="POST" action="/register">
             <div class="mb-6">
@@ -12,7 +12,9 @@
                 @enderror
             </div>
             </form>
+
+            {{-- Why wont you work --}}
     
-        
+@endsection
   
 </x-layout>
