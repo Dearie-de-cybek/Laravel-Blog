@@ -50,6 +50,21 @@
                 {{ $post->body }}
             </div>
         </div>
+        <section class="col-span-8 col-start-5 mt-10">
+            <article class="flex">
+                <div>
+                    <img src="https://i.pravatar.cc/100" alt="User avatar">
+                </div>
+
+                <div>
+                    <header>
+                        <h3 class="font-bold">Jon Doe</h3>
+                        <p class="text-xs">Posted <time>8 months ago </time> </p>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quisquam deserunt quia, eligendi libero optio nam assumenda at obcaecati vitae sit pariatur voluptates, ut neque praesentium. Voluptatum voluptatibus error ea.</p>
+                </div>
+            </article>
+        </section>
     </article>
 </main>
 @endsection
