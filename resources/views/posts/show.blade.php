@@ -51,6 +51,7 @@
             </div>
         </div>
         <section class="col-span-8 col-start-5 mt-10 space-y-6">
+            @auth
             <x-panel>
                 
                 <form method="POST" action="/posts/{{ $post->slug }}/comments">
@@ -60,7 +61,12 @@
                         <h2 class="ml-4">Want to Participate?</h2>
                     </header>
                     <div class="mt-5">
-                        <textarea name="body"  rows="5" class="w-full text-sm focus:outline-none focus:ring" placeholder="Think, of something to say"></textarea>
+                        <textarea name="body"  rows="5" class="w-full text-sm focus:outline-none focus:ring" placeholder="Think, of something to say"
+                        required></textarea>
+                        @error('body')
+                            <span class="text-xs text-red-400">{{ $message }}</span>
+
+                        @enderror
                     </div>
                     
                     <div class="flex justify-end mt-5 pt-5 border-t border-gray ">
@@ -68,7 +74,12 @@
                     </div>
                     
                 </form>
-            </x-panel>
+            </x-panel>   
+            @else 
+            <p class="font-semibold">
+               <a class="hover:underline" href="/register">Register</a> or <a href="/login" class="hover:underline">Log in to leave a comment</a>
+            </p> 
+            @endauth
 
             @foreach ($post->comments as $comment)
             <x-post-comment :comment="$comment"/>

@@ -18,6 +18,6 @@ class PostCommentsController extends Controller
             'body' => $request->input('body')
         ]);
 
-        return back();
+        return redirect('/')->with('success', 'Your comment has been submitted successfully.');
     }
 }
