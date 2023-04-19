@@ -29,13 +29,7 @@ class PostController extends Controller
     }
 
     public function create(){
-        if(auth()->guest()){
-            abort(403);
-        }
-
-        if(auth()->user()->username !== 'ahmed15'){
-            abort(Response::HTTP_UNAUTHORIZED);
-        }
+        
         return view('posts.create');
     }
 } 
