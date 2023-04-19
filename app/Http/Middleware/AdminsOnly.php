@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
+
 class AdminsOnly
 {
     /**
@@ -21,9 +22,9 @@ class AdminsOnly
         }
 
         if(auth()->user()->username !== 'ahmed15'){
-            abort(Response::HTTP_UNAUTHORIZED);
+            abort(403);
         }
-        
+
         return $next($request);
     }
 }
