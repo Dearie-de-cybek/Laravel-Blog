@@ -35,7 +35,7 @@ class PostController extends Controller
     }
     
     public function store(){
-        request()->validate([
+       $attributes = request()->validate([
             'title' => 'required',
             'slug' => ['required', Rule::unique('posts', 'slug')],
             'excerpt' => 'required',
