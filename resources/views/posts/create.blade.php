@@ -1,9 +1,13 @@
 <x-layout>
     @section('content')
-    <section class="px-6 py-8">
-        <x-panel class="max-w-sm mx-auto">
+    
+    <section class=" py-8 max-w-sm mx-auto">
+        <h1 class="text-lg font-bold mb-4">
+            Publish New Post
+        </h1>
+        <x-panel >
 
-            <form method="POST" action="/admin/posts">
+            <form method="POST" action="/admin/posts" enctype="multipart/form-data">
                 @csrf
                 
                 <div class="mb-6">
@@ -24,6 +28,17 @@
                     
                     <input class="border border-gray-400 p-2 w-full" name="slug" id="slug" type="text" required value="{{ old('slug') }}">
                     @error('slug')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="thumbnail">
+                        Thumbnail
+                    </label>
+                    
+                    <input class="border border-gray-400 p-2 w-full" name="thumbnail" id="thumbnail" type="file" required value="{{ old('thumbnail') }}">
+                    @error('thumbnail')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
                 </div>
