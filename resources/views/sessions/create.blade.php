@@ -9,10 +9,15 @@
                 <div class="mb-6">
                     
                     <label for="email" class="block mb-2 uppercase font-bold text-xs text-gray-700">Email</label>
-                    <input type="email" name="email" id="email" required class="border border-gray-400 p-2 w-full" value="{{ old('email') }}">
+                    <input type="email" name="email" id="email" required
+                    autocomplete="username"
+                    class="border border-gray-400 p-2 w-full" value="{{ old('email') }}">
 
                     <label for="password" class="block mb-2 uppercase font-bold text-xs text-gray-700">Password</label>
-                    <input type="password" name="password" id="password" required class="border border-gray-400 p-2 w-full"> 
+                    <input type="password" name="password" id="password" 
+                    required
+                    autocomplete="current-password"
+                    class="border border-gray-400 p-2 w-full"> 
                 </div>
                 <div class="mb-6">
                     <button type="submit"
