@@ -15,6 +15,7 @@ class AdminPostController extends Controller
         return view('admin.edit', ['post' => $post]);
     }
 
+    
     public function update(Post $post){
         $attributes = request()->validate([
             'title' => 'required',
